@@ -10,7 +10,7 @@ export const submitAnswer = async (req, res) => {
         if (!activeState) {
             return res.status(400).json({ message: "User has no active module" });
         }
-        console.log("Active state*******", activeState.currentModuleId);
+        // console.log("Active state*******", activeState.currentModuleId);
 
         // validate current question
         if (activeState.currentQuestionId !== questionId) {

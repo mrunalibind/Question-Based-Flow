@@ -4,7 +4,7 @@ export const startModule = async (req, res) => {
     try {
         const { userId } = req.body;
         const { moduleId } = req.params;
-        console.log("Starting module for userId:", userId, "moduleId:", moduleId);
+        // console.log("Starting module for userId:", userId, "moduleId:", moduleId);
         // Check if user exists
         const user = await db.User.findByPk(userId);
         if (!user) {
@@ -24,13 +24,13 @@ export const startModule = async (req, res) => {
             include: [db.Option],
         });
 
-        console.log("First question fetched:", firstQuestion);
+        // console.log("First question fetched:", firstQuestion);
 
         if (!firstQuestion) {
             return res.status(404).json({ message: "No questions found for this module" });
         }
 
-        console.log("Module***********", moduleId)
+        // console.log("Module***********", moduleId)
         // Create or update UserActiveState
         await db.UserActiveState.upsert({
             userId,
