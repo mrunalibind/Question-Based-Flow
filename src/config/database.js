@@ -11,10 +11,20 @@ dotenv.config();
 // };
 // console.log(obj);
 
+// const sequelize = new Sequelize(process.env.DB_URI, {
+//   dialect: "mysql",
+// });
+// console.log("Database URI:", process.env.DB_URI);
+
 const sequelize = new Sequelize(process.env.DB_URI, {
   dialect: "mysql",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  }
 });
-console.log("Database URI:", process.env.DB_URI);
 
 // const sequelize = new Sequelize(
 //     process.env.DB_NAME,
