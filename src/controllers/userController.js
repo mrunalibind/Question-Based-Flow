@@ -164,7 +164,7 @@ export const goBack = async (req, res) => {
         const lastAnswer = await db.ConversationHistory.findOne({
             where: {
                 userId,
-                // moduleId: activeState.currentModuleId,
+                moduleId: activeState.currentModuleId,
                 moduleSessionId: activeState.moduleSessionId,
             },
             order: [["createdAt", "DESC"]],
