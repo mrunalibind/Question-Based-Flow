@@ -2,6 +2,8 @@
 
 Backend service for a modular conversation flow system.
 
+Deployed_Link: https://question-based-flow.onrender.com/
+
 ## 🚀 Tech Stack
 
 - Node.js
@@ -57,10 +59,11 @@ Key Concept:
 4. Add .env file:
 
    PORT=5000,
-   DB_NAME=conversation_db,
-   DB_USER=root,
+   DB_PORT=database_port
+   DB_NAME=database_name,
+   DB_USER=db_user,
    DB_PASSWORD=yourpassword,
-   DB_HOST=localhost
+   DB_HOST=db_host
 
 6. Seed database:
 
